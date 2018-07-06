@@ -1,4 +1,4 @@
-require 'pry'
+
 class Application
 
   def call(env)
@@ -8,8 +8,7 @@ class Application
     if req.path.match(/items/)
       search_term = req.params["item_name"]
       if @@items.include?(search_term)
-        resp.write "#{Item.price}"
-        binding.pry
+        resp.write "#{search_term.price}"
       else
         resp.write "Item not found"
      resp.status = 400
