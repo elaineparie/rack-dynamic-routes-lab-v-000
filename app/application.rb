@@ -5,7 +5,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      search_term = req.params["item"]
+      search_term = req.params["item_name"]
       if @@items.include?(search_term)
         "#{Item.price}"
       else
