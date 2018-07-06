@@ -9,7 +9,7 @@ class Application
       search_term = req.params["item_name"]
       if @@items.include?(search_term)
         resp.write "#{search_term.price}"
-      else
+      elsif !@@items.include?(search_term)
         resp.write "Item not found"
      resp.status = 400
     end
