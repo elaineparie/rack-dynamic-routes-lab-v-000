@@ -9,7 +9,7 @@ class Application
       if @@items.include?(search_term)
         resp.write "#{Item.price}"
       else
-        resp.write "Item not found"
+      #  resp.write "Item not found"
      resp.status = 400
     end
 
