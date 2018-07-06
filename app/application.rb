@@ -8,6 +8,7 @@ class Application
       search_term = req.params["item_name"]
       if @@items.include?(search_term)
         resp.write "#{Item.price}"
+        binding.pry
       else
         resp.write "Item not found"
      resp.status = 400
