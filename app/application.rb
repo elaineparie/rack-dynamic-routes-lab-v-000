@@ -9,6 +9,7 @@ class Application
       if @@items.include?(search_term)
         Item.price
       else
+        resp.write "Item not found"
       resp.status = 404
     end
 
