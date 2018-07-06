@@ -8,6 +8,9 @@ class Application
       search_term = req.params["item"]
       if @@items.include?(search_term)
         item.price
+      else
+      resp.status = 404
+    end  
     else
       resp.write "Route not found"
       resp.status = 404
