@@ -5,12 +5,14 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path== "/items"
-      search_term = req.params["item"]
+      search_term = req.params["item_name"]
       if @@items.include?(search_term)
         Item.price
       else
       resp.status = 404
     end
+
+    
     else
       resp.write "Route not found"
       resp.status = 404
