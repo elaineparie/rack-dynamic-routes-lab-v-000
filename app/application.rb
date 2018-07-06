@@ -7,9 +7,11 @@ class Application
     if req.path.match(/items/)
       search_term = req.path.split("items/")[1]
       binding.pry
-       @@items.detect do |item|
-         if item.name == search_term
-        resp.write "#{item.price}"
+       item = @@items.detect do |item|
+         item.name == search_term
+       end
+        if item != nil
+          resp.write "#{item.price}"
       else
         resp.write "Item not found"
      resp.status = 400
