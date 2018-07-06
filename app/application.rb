@@ -5,9 +5,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     if req.path.match(/items/)
-      search_term = req.params["item"]
+      search_term = req.params["Item Name"]
       if @@items.include?(search_term)
-        binding.pry
         resp.write "#{Item.price}"
       else
         resp.write "Item not found"
