@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
     if req.path.match(/items/)
       search_term = req.path.split("items/")[1]
-      binding.pry
+
        item = @@items.detect do |item|
          item.name == search_term
        end
